@@ -3,7 +3,7 @@ import pandas as pd
 from textblob import TextBlob
 
 def read_json(json_file: str)->list:
-    """BUG!
+    """!
     json file reader to open and read json files into a list
     Args:
     -----
@@ -19,7 +19,7 @@ def read_json(json_file: str)->list:
         tweets_data.append(json.loads(tweets))
 
 
-    return k len(tweets_data), tweets_data
+    return len(tweets_data), tweets_data
 
 class TweetDfExtractor:
     """
