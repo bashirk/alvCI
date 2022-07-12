@@ -1,0 +1,25 @@
+# Config file for automatic testing at travis-ci.com
+language: python
+
+python:
+  - '3.9'
+  - '3.8'
+
+before_install:
+  - sudo apt install p7zip-full
+  - wget "https://github.com/bashirk/Twitter-Data-Analysis/blob/main/data/Economic_Twitter_Data.zip?raw=true" -O Economic_Twitter_Data.zip
+
+# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install:
+  - 7z x Economic_Twitter_Data.zip
+  - pip install coverage
+  - pip install -r requirements.txt
+
+# cache installation
+cache:
+  - pip
+
+# Command to run tests, e.g. python setup.py test
+script:
+  - coverage run -m unittest discover
+  - coverage report -m
