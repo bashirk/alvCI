@@ -6,14 +6,15 @@ class Clean_Tweets:
     """
     This class will clean up the tweets
     """
-    def __init__(self, df:pd.DataFrame):
+
+    def __init__(self, df: pd.DataFrame):
         self.df = df
-        columns = ['created_at', 'source', 'original_text','clean_text', 'sentiment','polarity','subjectivity', 'lang', 'favorite_count', 'retweet_count', 
-    'original_author', 'screen_count', 'followers_count','friends_count','possibly_sensitive', 'hashtags', 'user_mentions', 'place', 'place_coord_boundaries']
+        columns = ['created_at', 'source', 'original_text', 'clean_text', 'sentiment', 'polarity', 'subjectivity', 'lang', 'favorite_count', 'retweet_count',
+                   'original_author', 'screen_count', 'followers_count', 'friends_count', 'possibly_sensitive', 'hashtags', 'user_mentions', 'place', 'place_coord_boundaries']
 
         print('Automation in Action...!!!')
 
-    def drop_unwanted_column(self)->pd.DataFrame:
+    def drop_unwanted_column(self) -> pd.DataFrame:
         """
         remove rows that has column names. This error originated from
         the data collection stage.  
@@ -32,6 +33,7 @@ class Clean_Tweets:
         self.df = self.df.drop_duplicates().drop_duplicates(subset='original_text')
 
         return df
+        
     def convert_to_datetime(self, df:pd.DataFrame)->pd.DataFrame:
         """
         convert column to datetime
