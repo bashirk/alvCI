@@ -1,4 +1,0 @@
-run: python -m unittest tests/test_extract_dataframe.py
-    - name: Run tests on clean_tweets_dataframe
-      run: python -m unittest tests/test_clean_tweets_dataframe.py
-    - run: echo "🍏 This job's status is ${{ job.status }}."
