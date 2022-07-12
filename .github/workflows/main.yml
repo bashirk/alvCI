@@ -31,7 +31,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Get zip data
-        run: wget "https://github.com/bashirks/alvCI/blob/main/data/Economic_Twitter_Data.zip?raw=true" -O Economic_Twitter_Data.zip
+        run: wget "https://github.com/bashirk/alvCI/blob/main/data/Economic_Twitter_Data.zip?raw=true" -O Economic_Twitter_Data.zip
       - name: Extract the test data file
         run: 7z x Economic_Twitter_Data.zip
       - name: Install requirements
